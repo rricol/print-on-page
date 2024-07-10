@@ -1,0 +1,63 @@
+{
+  "name": "@numeraswiss/printonpage",
+  "version": "1.0.0",
+  "description": "print on page element plugin for Webflow",
+  "homepage": "https://github.com/rricol/print-on-page#readme",
+  "license": "ISC",
+  "keywords": [],
+  "author": {
+    "name": "rricol",
+    "url": "https://numera.swiss/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rricol/print-on-page.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rricol/print-on-page/issues"
+  },
+  "type": "module",
+  "main": "src/index.ts",
+  "module": "src/index.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development node ./bin/build.js",
+    "build": "cross-env NODE_ENV=production node ./bin/build.js",
+    "lint": "eslint --ignore-path .gitignore ./src && prettier --check ./src",
+    "lint:fix": "eslint --ignore-path .gitignore ./src --fix",
+    "check": "tsc --noEmit",
+    "format": "prettier --write ./src",
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "release": "changeset publish",
+    "update": "pnpm update -i -L -r"
+  },
+  "devDependencies": {
+    "@changesets/changelog-git": "^0.2.0",
+    "@changesets/cli": "^2.27.1",
+    "@finsweet/eslint-config": "^2.0.7",
+    "@finsweet/tsconfig": "^1.3.4",
+    "@playwright/test": "^1.42.1",
+    "@typescript-eslint/eslint-plugin": "^7.1.1",
+    "@typescript-eslint/parser": "^7.1.1",
+    "cross-env": "^7.0.3",
+    "esbuild": "^0.20.1",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-simple-import-sort": "^12.0.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@finsweet/ts-utils": "^0.40.0",
+    "gsap": "^3.12.5",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^2.5.1"
+  },
+  "engines": {
+    "pnpm": ">=9"
+  }
+}
